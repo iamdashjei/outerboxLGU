@@ -9,18 +9,34 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { HttpClientModule } from '@angular/common/http';
+import { PusherService } from './pusher.service';
+
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
+import { GoogleMaps } from '@ionic-native/google-maps';
+
+import { IonicStorageModule } from '@ionic/storage';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    IonicStorageModule.forRoot(),
+    HttpClientModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    Geolocation,
+    NativeGeocoder,
+    GoogleMaps,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    PusherService,
+    NativeStorage
   ],
   bootstrap: [AppComponent]
 })

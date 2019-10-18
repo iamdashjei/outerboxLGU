@@ -1,5 +1,7 @@
 {
   "name": "outerboxLGU",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

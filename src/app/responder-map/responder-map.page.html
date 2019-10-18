@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar color="success">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+          Map
+        </ion-title>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-button expand="full" color="primary" *ngIf="!isTracking">
+        <ion-icon slot="start" name="locate"></ion-icon>
+      Start Tracking</ion-button>
+
+   <ion-button expand="full" color="primary" *ngIf="isTracking">
+        <ion-icon slot="start" name="hand"></ion-icon>
+        Stop Tracking</ion-button>
+  
+   <div #map id="map"></div> 
+</ion-content>
